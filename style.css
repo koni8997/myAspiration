@@ -1,0 +1,906 @@
+/* ---------------------- CSS 초기화----------------------  */
+html,body,header,h1,h2,video,img{
+    margin:0;
+    padding:0;
+    box-sizing: content-box;
+    color:var(--color-black);
+    font-family: var(--font-kr);
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    color:var(--color-black);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ---------------------- 재사용할 속성 ---------------------- */
+:root{
+    /* 컬러 */
+    --color-white:rgb(255, 255, 255);
+    --color-lightgrey:rgb(207, 207, 207);
+    --color-darkgrey:rgb(153, 153, 153);
+    --color-black:rgb(61, 61, 61);
+	--color-timeline:rgb(143, 136, 136);;
+   
+    /* 글꼴 */
+    --font-en:'Shadows Into Light', cursive;
+    --font-kr:'Do Hyeon', sans-serif;
+    
+    /* 사이즈 */
+    --size-1em:1em;
+    --size-15em:1.5em;
+    --size-2em:2em;
+    --size-3em:3em;
+    --size-4em:4em;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300vh;
+    width: 100%;
+    font-family: var(--font-en);
+    align-items: center;
+    transition: 0.5s;
+}
+
+main{
+    width: 100%;
+}
+
+/* ---------------------- 다크모드 ---------------------- */
+body.active{
+	background-color: var(--color-black);
+    color:var(--color-white);
+}
+
+span.active{
+	background-color: var(--color-black);
+    color:var(--color-white);
+}
+
+.DarkMode{
+    margin:auto;
+}
+
+#toggle{
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    background: rgb(236, 234, 234);
+    box-shadow: inset 0 2px 60px rgba(0,0,0,0.1),
+                inset 0 2px 8px rgba(0,0,0,0.1),
+                inset 0 -4px 4px rgba(0,0,0,0.05),
+  }
+#toggle.active{
+    background: var(--color-black);
+    box-shadow: inset 0 8px 60px rgba(0,0,0,0.1),
+            inset 0 8px 8px rgba(0,0,0,0.1),
+            inset 0 -4px 4px rgba(0,0,0,0.1);
+
+}
+#toggle .indicator{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: scale(0.9);
+    background: linear-gradient(to bottom,#e9e9e9,#f9f9f9);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1),
+                inset 0 4px 4px rgba(255,255,255,1),
+                inset 0 -4px 4px rgba(255,255,255,1);
+    transition: 0.5s;
+}
+
+#toggle.active .indicator{
+    position: absolute;
+    left:30px;
+    background: linear-gradient(to bottom,#444,#222);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5),
+                inset 0 4px 40px rgba(255,255,255,0.2),
+                inset 0 -4px 40px rgba(255,255,255,0.2);
+}
+
+/* ---------------------- 헤더----------------------  */
+header{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+/* 헤더 최상단 */
+.header-wrapper{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 7.5vh;
+    margin: 0 auto;
+    justify-content: space-around;
+    background: linear-gradient(0deg, #ffffffd9, #ffffffd9);
+    border-bottom: 1px solid var(--color-darkgrey);
+    font-weight: 700;
+    z-index:1000;
+}
+
+
+/* 헤더 > 메인로고 */
+.mainlogo{
+    font-size: var(--size-2em);
+    display: flex;
+    align-items: center;
+}
+
+.mainlogo img{
+    width: 35px;
+    padding-right: 10px;
+}
+
+
+/* 헤더 > 네비게이션바 */
+.navBar{
+    display: flex;
+}
+
+.navBar ul{
+    display: flex;
+    z-index: 10000;
+	text-align:right;
+}
+
+.navBar ul>li{
+    font-size: 1.3em;
+	padding-right:4em;
+}
+
+#navBarList a:hover{
+    text-decoration: underline;
+}
+
+/* -------------------- 메인 -------------------- */
+/* 본문 섹션 공통 */
+/* .section:nth-child(odd){
+    background-color: rgb(220, 233, 238);
+}
+
+.section:nth-child(even){
+    background-color: rgb(240, 207, 213);
+} */
+.section{
+	position: relative;
+    display: flex;
+	justify-content:center;
+	height:1000px;
+	overflow: hidden;
+    align-items: center;
+    font-family: var(--font-kr);
+	background-color:var(--color-white);
+
+}
+
+/* --------------------첫 화면-------------------- */
+.greetings{
+    background: url(images/macbook.png) 20px fixed;
+	background-color:transparent;
+    background-repeat : no-repeat;
+    background-size: 98% 90%;
+    height: 100vh;
+    letter-spacing: 5px;
+    font-weight: 700;
+    font-size: 5em;
+    line-height: 1.3em;
+    text-align: center;
+} 
+
+.greetingBackground{
+    background-image: url(images/run.mp4);
+    background-size: cover;
+    height: 68%;
+    width: 65%;
+    position: fixed;
+    /* background-color: yellow; */
+}
+
+.greetingText{
+    min-height: 60%;
+    min-width: 90%;
+   margin-top:100px;
+   left: 50%;
+	top:50%;
+    z-index:2000;
+    /* background-color: violet; */
+}
+
+/* --------------------인트로-------------------- */
+.intro{
+    background:var(--color-white) fixed;
+    /* position: absolute; */
+
+}
+
+.intro >.introTextBox{
+    width: 70%;
+    height: 70%;
+    font-size: 4em;
+    letter-spacing: -2px;
+    font-weight: 800;
+    line-height: 1.7em;
+    align-items: center;
+    text-align: center;
+}
+
+.introTextBox .red{
+    color:red;
+}
+
+.introTextBox >.siteName{
+    padding-top: 0.3em;
+    font-size: var(--size-2em);
+}
+
+
+/* 개발새발 글씨  */
+.one{
+	animation:textShow 1s;
+}
+
+.two{
+	animation:textShow 2.5s;
+}
+
+.three{
+	animation:textShow 4s;
+}
+
+.four{
+	animation:textShow 5.5s;
+}
+
+/* 개발세발 애니메이션 */
+@keyframes textShow{
+    from{
+        opacity: 0.3;
+        transform: translateY(-100px) scale(0.5);
+        color:rgb(202, 200, 200);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        color:var(--color-black);
+    }
+}
+
+
+
+/* ---------------개발자 동기--------------- */
+.introduce{
+    font-size: 6em;
+    text-align: center;
+    line-height:1.5em;
+    letter-spacing: -5px;
+    font-weight: 800;
+	height:100vh;
+	overflow:hidden;
+}
+
+/* 섹션2>배경비디오 안 본문내용 */
+.introduce ul{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.introduce ul>li:nth-child(2){
+	color:#f94945;
+}
+
+.introduce ul>li:nth-child(2):hover{
+    transform: scale(1.5);  /* 빰빰 하고 2단계로 확장 필요*/
+    opacity: 1;
+  }
+
+
+/* 포트폴리오 */
+.portfolio{
+    /* background-color: chartreuse; */
+}
+
+.BoxWrapper{
+    width: 90%;
+    height: 90%;
+    /* background-color: yellow; */
+}
+
+
+/* 포트폴리오 */
+/*박스1*/
+.center1{
+    position: absolute;
+    top:50%;
+    left:20%;
+    transform: translate(-50%,-50%); /*이동*/
+}
+/* 2.75 x 32.5 x 22.7cm  */
+.box1{
+    position: relative;
+    width: 227px;
+    height: 159px;
+    transform: perspective(500px) rotate(-40deg) skew(25deg);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -90px 75px 20px rgba(0,0,0,.3); /*그림자*/
+    background: #fff  url(/images/macbooksilver.png);
+    background-size: cover;  
+    background-size: 227px 159px; /*키보드 사진 사이즈*/
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+    font-size: 20px; 
+    text-align: center;  
+    font-weight: bold; 
+    color:var(--color-white);
+	background-color:#93949a;
+    border-radius: 3px;       
+}
+
+.box1:hover{
+    transform: perspective(500px) rotate(-40deg) skew(25deg) translate(50px,-50px);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -150px 115px 100px rgba(0,0,0,0.3);
+}
+
+
+.box1::before{
+    content: '';
+    color:antiquewhite;
+    font-size: 25px;
+    width: 159px;
+    height: 19px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-40deg) translate(-89px,3px) rotate(90deg) ; /*Y축 기준 으로 40도 경사,X축 Y축 회전*/ 
+    background: #93949a ;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+}
+
+.box1::after{
+    content: ' ';
+    color:#dc5e73;
+    font-size: 20px;
+    width:225px;
+    height: 19px;
+    position: absolute;
+    top: 83px;
+    left: 28px;
+    transform: skewX(-52deg) translate(57px,74px);
+    background: #93949a;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 2px;
+
+}
+
+/*박스2*/
+.center2{
+    position: absolute;
+    top:50%;
+    left:40%;
+    transform: translate(-50%,-50%); /*이동*/
+}
+/* 2.75 x 32.5 x 22.7cm  */
+.box2{
+    position: relative;
+    width: 227px;
+    height: 159px;
+    transform: perspective(500px) rotate(-40deg) skew(25deg);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -90px 75px 20px rgba(0,0,0,.3); /*그림자*/
+    background: #fff  url(/images/macbooksilver.png);
+    background-size: cover;  
+    background-size: 227px 159px; /*키보드 사진 사이즈*/
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+    font-size: 20px; 
+    text-align: center;  
+    font-weight: bold; 
+    color:var(--color-white);
+	background-color:#93949a;
+    border-radius: 3px;       
+}
+
+.box2:hover{
+    transform: perspective(500px) rotate(-40deg) skew(25deg) translate(50px,-50px);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -150px 115px 100px rgba(0,0,0,0.3);
+}
+
+
+.box2::before{
+    content: '';
+    color:antiquewhite;
+    font-size: 25px;
+    width: 159px;
+    height: 19px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-40deg) translate(-89px,3px) rotate(90deg) ; /*Y축 기준 으로 40도 경사,X축 Y축 회전*/ 
+    background: #93949a ;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+}
+
+.box2::after{
+    content: ' ';
+    color:#dc5e73;
+    font-size: 20px;
+    width:225px;
+    height: 19px;
+    position: absolute;
+    top: 83px;
+    left: 28px;
+    transform: skewX(-52deg) translate(57px,74px);
+    background: #93949a;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 2px;
+
+}
+
+/*박스3*/
+.center3{
+    position: absolute;
+    top:50%;
+    left:60%;
+    transform: translate(-50%,-50%); /*이동*/
+}
+/* 2.75 x 32.5 x 22.7cm  */
+.box3{
+    position: relative;
+    width: 227px;
+    height: 159px;
+    transform: perspective(500px) rotate(-40deg) skew(25deg);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -90px 75px 20px rgba(0,0,0,.3); /*그림자*/
+    background: #fff  url(/images/macbooksilver.png);
+    background-size: cover;  
+    background-size: 227px 159px; /*키보드 사진 사이즈*/
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+    font-size: 20px; 
+    text-align: center;  
+    font-weight: bold; 
+    color:var(--color-white);
+	background-color:#93949a;
+    border-radius: 3px;       
+}
+
+.box3:hover{
+    transform: perspective(500px) rotate(-40deg) skew(25deg) translate(50px,-50px);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -150px 115px 100px rgba(0,0,0,0.3);
+}
+
+
+.box3::before{
+    content: '';
+    color:antiquewhite;
+    font-size: 25px;
+    width: 159px;
+    height: 19px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-40deg) translate(-89px,3px) rotate(90deg) ; /*Y축 기준 으로 40도 경사,X축 Y축 회전*/ 
+    background: #93949a ;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+}
+
+.box3::after{
+    content: ' ';
+    color:#dc5e73;
+    font-size: 20px;
+    width:225px;
+    height: 19px;
+    position: absolute;
+    top: 83px;
+    left: 28px;
+    transform: skewX(-52deg) translate(57px,74px);
+    background: #93949a;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 2px;
+
+}
+
+/*박스4*/
+.center4{
+    position: absolute;
+    top:50%;
+    left:80%;
+    transform: translate(-50%,-50%); /*이동*/
+}
+/* 2.75 x 32.5 x 22.7cm  */
+.box4{
+    position: relative;
+    width: 227px;
+    height: 159px;
+    transform: perspective(500px) rotate(-40deg) skew(25deg);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -90px 75px 20px rgba(0,0,0,.3); /*그림자*/
+    background: #fff  url(/images/macbooksilver.png);
+    background-size: cover;  
+    background-size: 227px 159px; /*키보드 사진 사이즈*/
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+    font-size: 20px; 
+    text-align: center;  
+    font-weight: bold; 
+    color:var(--color-white);
+	background-color:#93949a;
+    border-radius: 3px;       
+}
+
+.box4:hover{
+    transform: perspective(500px) rotate(-40deg) skew(25deg) translate(50px,-50px);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -150px 115px 100px rgba(0,0,0,0.3);
+}
+
+
+.box4::before{
+    content: '';
+    color:antiquewhite;
+    font-size: 25px;
+    width: 159px;
+    height: 19px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-40deg) translate(-89px,3px) rotate(90deg) ; /*Y축 기준 으로 40도 경사,X축 Y축 회전*/ 
+    background: #93949a ;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+}
+
+.box4::after{
+    content: ' ';
+    color:#dc5e73;
+    font-size: 20px;
+    width:225px;
+    height: 19px;
+    position: absolute;
+    top: 83px;
+    left: 28px;
+    transform: skewX(-52deg) translate(57px,74px);
+    background: #93949a;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 2px;
+
+}
+
+/* 더 알아보기 */
+.learnMore{
+	height:100vh;
+}
+
+
+.learnMoreBack{
+	background:url(images/user.jpg) fixed;
+	background-size:cover;
+	width:70%;
+	height:70%;
+	text-align:center;
+	align-items:center;
+}
+
+.learnMoreText{
+	font-size:var(--size-2em);
+	font-weight:800;
+	top:50%;
+	transform:translateY(-50%);
+	color:var(--color-white);
+	width:inherit;
+	position:absolute;
+	padding:1%;
+}
+
+.learnMoreText h2{
+	color:var(--color-white);
+	padding:1%;
+}
+
+.learnMoreText div{
+	padding:0.5%;
+}
+
+
+.learnMoreText a{
+	color:var(--color-white);	
+}
+
+.learnMoreText a:hover{
+	text-decoration:underline;
+}
+
+
+.career{
+    height: auto;
+}
+
+
+/* 이전 이력 */
+.timeline-wrapper{
+	max-width:1200px; /*창크기 시 최대 너비 지정*/
+    min-height: 1500px;
+	height:2500px;
+	margin:0 auto;
+	padding:0 40px;/*창 크기 줄였을 때 너무 바짝 붙는걸 막기 위해 패딩값 지정*/
+    /* background-color: violet; */
+}
+
+.timeline-wrapper h1{
+    /* padding:20px 0px; */
+	letter-spacing:-5px;
+    text-align: center;
+    font-size: 4em;
+}
+
+
+.timeline{
+	margin: 0 -40px; /*h1과 contens박스 세로줄 맞추기*/
+	padding:50px 0;
+	position:relative;
+}
+
+/* 중간 선 */
+.timeline:before{
+	content:'';
+	position:absolute;
+	left:50%;
+	transform:translateX(-50%);
+	top:0;
+	bottom:0;
+	margin:50px 0px -100px; /*선이 늦게 시작해서 늦게 끝나게*/
+	width:5px;
+	background: rgb(110,110,115);
+background: linear-gradient(0deg, rgba(110,110,115,1) 0%, rgba(110,110,115,0.09567577030812324) 100%);
+}
+
+/* 사진+텍스트 전체 박스 */
+.timeline-item {
+    position: relative;
+	width: 50%;
+	padding: 50px 50px;
+	box-sizing: border-box;
+}
+
+/*선에 붙은 동그라미*/
+.timeline-item:before {
+	content: ' ';
+	position: absolute;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 6px solid var(--color-timeline);
+    background-color: var(--color-timeline);
+	margin: 50px -15px;
+}
+
+/*짧은선*/
+.timeline-item:after {
+	content: '';
+	background-color: var(--color-timeline);
+	position: absolute;
+	top: 7em;
+	right: 0;
+	width: 40px;
+	height: 5px;
+	margin: 0 30px;
+}
+
+.timeline-item:nth-child(even) {
+	margin-left: auto;
+	margin-top: -220px;
+	margin-bottom: -220px;
+}
+
+.timeline-item:nth-child(even):before,
+.timeline-item:nth-child(even):after {
+	left: 0;
+}
+
+.workExperience img{
+    width: 8em;
+    float: right;
+    padding:1em;
+}
+
+.workExperience{
+	min-height:400px; /*최소 높이 지정*/
+}
+
+.workExperience-cover{
+	width:100%; /*사진 꽉 차게*/
+}
+
+.workExperience-contents {
+	padding: 30px;	
+}
+
+.workExperience-contents li{
+	list-style-type:disc;
+}
+
+.workExperience-contents h2 {
+	margin-bottom: 20px;
+	font-size: 2em;
+    color:var(--color-darkgrey);
+	/* background-color:green; */
+	display:inline-block;
+}
+
+.workExperience-contents h2 strong {
+	display: block;	
+	color: var(--color-lightgrey);
+	/* background-color:blue; */
+}
+
+.workExperience-contents p {
+	line-height: 1.4;
+	color: var(--color-black);
+    list-style:circle;
+}
+
+.team{
+
+}
+
+.workExperience-contents span{
+	float:right;
+	font-size:0.5em;
+	color: var(--color-black);
+	padding:0.1em;
+}
+
+.nowWrapper{
+	display:flex;
+	/* flex-direction:column; */
+	width: 100%;
+	height:500px;
+	background-color:red;
+	/* position:absolute; */
+	margin-top:6em;
+}
+
+.wrapper1{
+	background-color:yellow;
+	width:50%;
+}
+
+.wrapper2{
+	background-color:pink;
+	width:50%;
+}
+
+.image{
+	background-image:url(images/user.jpg);
+	background-size:cover;
+	width: 63%;
+	height:500px;
+	background-color:blue;
+	/* position:absolute; */
+	margin-top:12em;
+}
+
+.
+
+
+/* 연락하기 */
+.contact{
+    /* padding:1em; */
+    display: flex;
+    justify-content: space-around;
+    background-color: pink;
+}
+
+/* 1.연락 정보 */
+.contactInfo, .contact form{
+    width: 45%;
+    padding:var(--size-1em);
+    box-sizing: border-box;  
+    border-radius: 15px;
+    border:none;
+    font-family: var(--font-en); 
+    letter-spacing: 5px;
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+}
+
+/* 2.이메일 보내기 */
+.contact form>input{
+    height: 3em;
+    border-radius: 10px;
+    margin-bottom:15px;
+    font-size: 0.5em;
+    border:2px dashed var(--color-green);
+    font-family: var(--font-en);
+}
+
+
+
+.sendBtn{
+    height: 4em;
+    border-radius: 5px;
+    margin-top:25px;
+    border:none;
+    background-color: var(--color-green);
+    font-family: var(--font-en);
+    font-size: var(--size-3em);
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+
+/* 버튼 */
+#btn{
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding:8px 50px;
+    background-color: var(--color-white);
+    border-radius:var(--size-1em);
+    font-size: 1.4em;
+    color:var(--color-black);
+    z-index: 5000;
+}
+
+/* ---------------------- 하단----------------------  */
+footer{
+    border-top: 1px solid var(--color-darkgrey);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer{
+    display: flex;
+    width: 90%;
+    text-align: center;
+    color:var(--color-black);
+    font-size: 2em;
+}
+
+.copyRight{
+    width: 30%;
+}
+.icon{
+    width: 70%;
+    display: flex;
+    justify-content: right;
+    margin:5px;
+}
+
+.icon img{
+    width: 35px;
+    padding:5px 15px;
+}
