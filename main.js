@@ -1,19 +1,39 @@
 //다크모드 버튼
 const toggle=document.querySelector('#toggle');
 const body=document.querySelector('body');
-// const section=document.querySelectorAll('.section');
-// const li=document.querySelectorAll('li');
-const span=document.querySelectorAll('span');
+const section=document.querySelectorAll('.section');
+const a=document.querySelectorAll('a');
+const spanList=document.querySelectorAll('span');
+const card=document.querySelectorAll('.card');
+const copyRight=document.querySelector('.copyRight');
+const headWrapper=document.querySelector('.header-wrapper');
 
 
-toggle.onclick=function(){
-    toggle.classList.toggle('active'); //토글컬러도 변경
-    // section.classList.toggle('active'); //배경화면도 변경
-    // li.classList.toggle('active'); //li도 모두 변경
-    span.classList.toggle('active');
-    body.classList.toggle('active');
+toggle.addEventListener('click',()=>{
+    toggle.classList.toggle('active'); //버튼컬러도 변경
+    body.classList.toggle('active'); //바디컬러도 변경
+    copyRight.classList.toggle('active');//카피라잇텍스트
+    headWrapper.classList.toggle('active');//네브바
 
-}
+    //queryselectall 즉, 2개 이상 요소 선택 시에는 반복문 필수
+    //section 배경 변경
+    for(i=0;i<section.length;i++){
+        section[i].classList.toggle('active');
+    };
+
+    // span 변경
+    for(i=0;i<spanList.length;i++){
+        spanList[i].classList.toggle('active');
+    };
+
+    // card 변경
+    for(i=0;i<card.length;i++){
+        card[i].classList.toggle('active');
+    };
+
+    
+});
+
 
 // 웰컴 인사 타이핑 효과
 const content = "안녕하시렵니까,\n역동적인 프론트 개발자\n 김영건입니다.";
@@ -64,4 +84,3 @@ setInterval(typing, 200)
 // 		heart.remove(); /*5초 뒤에 바디의 하트를 하나씩 떼어버림*/
 // 	},5000);
 // })
-
