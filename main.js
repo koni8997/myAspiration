@@ -9,6 +9,7 @@ const copyRight=document.querySelector('.copyRight');
 const headWrapper=document.querySelector('.header-wrapper');
 
 
+
 toggle.addEventListener('click',()=>{
     toggle.classList.toggle('active'); //버튼컬러도 변경
     body.classList.toggle('active'); //바디컬러도 변경
@@ -35,20 +36,22 @@ toggle.addEventListener('click',()=>{
 });
 
 
-// 웰컴 인사 타이핑 효과
-const content = "안녕하시렵니까,\n역동적인 프론트 개발자\n 김영건입니다.";
-const text = document.querySelector(".greetingText");
-let i = 0;
 
-function typing(){
-    let txt = content[i++];
-    text.innerHTML += txt=== "\n" ? "<br/>": txt;
-    if (i > content.length) {
-        text.textContent = "";
-        i = 0;
-    }
-}
-setInterval(typing, 200)
+
+// // 웰컴 인사 타이핑 효과
+// const content = "안녕하시렵니까,\n역동적인 프론트 개발자\n 김영건입니다.";
+// const text = document.querySelector(".greetingText");
+// let i = 0;
+
+// function typing(){
+//     let txt = content[i++];
+//     text.innerHTML += txt=== "\n" ? "<br/>": txt;
+//     if (i > content.length) {
+//         text.textContent = "";
+//         i = 0;
+//     }
+// }
+// setInterval(typing, 200)
 
 
 
