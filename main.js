@@ -37,7 +37,6 @@ toggle.addEventListener('click',()=>{
 
 
 
-
 // // 웰컴 인사 타이핑 효과
 // const content = "안녕하시렵니까,\n역동적인 프론트 개발자\n 김영건입니다.";
 // const text = document.querySelector(".greetingText");

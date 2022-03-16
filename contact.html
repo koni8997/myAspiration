@@ -11,87 +11,120 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 	<script src="https://kit.fontawesome.com/1b2b5a6b02.js" crossorigin="anonymous"></script>    
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="main.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+
+    <!-- <script src="main.js"></script> -->
     <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
-    <!-- 헤더 -->
-    <header>
-        <div class="header-wrapper">
-            <div class="mainlogo">
-                <a href=""><img src="/start-up.png" alt=""></a>    
-                <a href="">개발,"새"발</a>          
-            </div>
+  <header>
+    <div class="header-wrapper">
+        <div class="mainlogo">
+            <a href="index.html"><img src="/images/start-up.png" alt=""></a>    
+            <a href="index.html">개발,"새"발</a>          
+        </div>
 
-            <!-- 네이게이션바 -->
-            <nav class="navBar">
-                <ul id="navBarList">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="#">RESUME</a></li>
-                </ul>
-                <div class="DarkMode">
-                    <div id="toggle">
-                        <i class="indicator"></i>
-                    </div>
+        <!-- 네이게이션바 -->
+        <nav class="navBar">
+            <ul id="navBarList">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="/resume.html">RESUME</a></li>
+            </ul>
+            <div class="DarkMode">
+                <div id="toggle">
+                    <i class="indicator"></i>
                 </div>
-            </nav>
-        </div>
-    </header>    
-
-    
-            
-    <!-- 연락하기(이메일) -->
-    <div class="section contact">
-        <!-- 연락 정보 -->
-        <div class="contactInfo">
-            하하
-        </div>
-
-        <!-- 이메일 발송 -->
-        <form class="gform" action="[appURL]" method="post" data-email="koni8997@gmail.com">
-            <label for="senderName">보내는 사람 이름</label>
-            <input type="name" id="senderName">
-            <label for="senderEmail">보내는 사람 주소</label>
-            <input type="email" id="senderEmail">
-            <label for="emailText">내용</label>
-            <input type="message" id="emailText">
-            <input type="submit" value="전송">
-        </form>
+            </div>
+        </nav>
     </div>
+</header>
+
+<!-- 메인 -->
+<main>
   
+    <!-- 첫 화면 -->
+    <div class="section contact">
+        <div class="contactBox">
+          <form action="">
+            <label for="name"><i class="xi-user-o"></i>보내는 분</label>
+            <input type="text" id="name" name="name" placeholder="성함을 입력해주세요">
+            <label for="emeil"><i class="xi-mail"></i>보내는 분 이메일 주소</label>
+            <input type="text" id="email" name="email" placeholder="메일 주소를 입력해주세요">
+            <label for="message"><i class="xi-text-type"></i>내용</label>
+            <textarea name="message" id="message" rows="15" placeholder="내용을 입력해주세요 "></textarea>
+            <input type="button" name="submit" id="sendMail" class="btn white" value="메일보내기"/> 
+            </form>
+        </div>      
+    </div>
     <!-- 하단 -->
     <footer>
-        <div class="footer">
-            <div class="copyRight">copyright&copy;young</div>
-            <div class="icon">
+      <div class="footer">
+        <div class="copyRight">copyright&copy;young</div>
+        <div class="icon">
+            <a href="">
                 <img src="/images/github-sign.png" alt="">
+            </a>
+            <a href="">
                 <img src="/images/Notion_app_logo.png" alt="">
+            </a>
+            <a href="contact.html"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <img src="/images/email.png" alt="">
-            </div>
+            </a>
         </div>
+    </div>
     </footer>
-    <script>
-            $.ajax({
-        data: {
-            name: name,
-            message: message,
-            email: email
-        },
-        url: 'Your app url',
-        method: 'post',
-        success: (data) => {
-            console.log(data)
-            // parsing = JSON.parse(data.data);
-        },
-        error: (xhr, err) => {
-            console.log(err);
-        }
-    });
+  </body>
 
-    </script>
+  <!-- 이메일 발송 폼 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+  
+  $(document).ready(function() {
+		emailjs.init("-KHcnBM89mDRh9Knu");		
+        $('input[name=submit]').click(function(){       	 
+          
+          var templateParams = {	
+                name: $('input[name=name]').val(),
+                phone: $('input[name=phone]').val(), 
+                email : $('input[name=email]').val(),
+                message : $('textarea[name=message]').val()
+          };
+                    
+                	
+         emailjs.send('service_8v8ti9c', 'template_z7811nf', templateParams)
+         //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
+         	    .then(function(response) {
+         	       console.log('SUCCESS!', response.status, response.text);
+                  alert('전송 완료! 빠른 시일 내 연락 드리겠습니다.');
+         	    }, function(error) {
+         	       console.log('FAILED...', error);
+         	    });
+        });
+	  });
+
+    //다크모드 버튼
+const toggle=document.querySelector('#toggle');
+const body=document.querySelector('body');
+const contactSection=document.querySelector('.contact');
+const footer=document.querySelector('footer');
+
+
+
+
+
+toggle.addEventListener('click',()=>{
+    toggle.classList.toggle('active'); //버튼컬러도 변경
+    body.classList.toggle('active'); //바디컬러도 변경
+    contactSection.classList.toggle('active');
+    footer.classList.toggle('active');
+
     
-</body>
+});
+    
+  </script>
+  
 </html>

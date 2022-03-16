@@ -12,10 +12,12 @@ li{
 }
 
 a{
-    color:var(--color-black);
-    text-decoration: none;
+    color:var(--color-black)!important;
+    text-decoration: none!important;
     cursor: pointer;
 }
+
+
 
 /* ---------------------- 재사용할 속성 ---------------------- */
 :root{
@@ -86,6 +88,15 @@ h1.active{
     color:white;
 }
 
+
+
+.contact.active{
+    background: linear-gradient(90deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);}
+
+footer.active{
+    display: none;
+}
+
 .DarkMode{
     margin:auto;
 }
@@ -153,6 +164,7 @@ header{
     border-bottom: 1px solid var(--color-darkgrey);
     font-weight: 500;
     z-index:1000;
+    align-items: center;
 }
 
 
@@ -177,13 +189,18 @@ main{
 /* 헤더 > 네비게이션바 */
 .navBar{
     display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    /* background-color: red; */
 }
 
 .navBar ul{
     display: flex;
     z-index: 10000;
 	text-align:right;
-    align-items: center;
+    /* align-items: center; */
+    /* background-color: wheat; */
+    margin: 0;
 }
 
 .navBar ul>li{
@@ -203,7 +220,7 @@ main{
 	justify-content:center;
 	height:100vh;
 	overflow: hidden;
-    align-items: center;
+    /* align-items: center; */
 	background-color:var(--color-white);
 }
 
@@ -570,7 +587,7 @@ main{
 }
 
 .learnMoreText a{
-	color:var(--color-white);	
+	color:var(--color-white)!important;	
 }
 
 .learnMoreText a:hover{
@@ -579,67 +596,75 @@ main{
 
 /* 연락하기 */
 .contact{
-    width: 80%;
-    margin:5em;
-    justify-content: space-around;
-    background-color: pink;
+    width: 100%;
+    /* margin:5em; */
+    /* background-color: transparent; */
+    padding-top: 5vh;
+    /* background-color: pink; */
+    text-align: center;
+    position: relative;
+
+   
 }
 
-/* 1.연락 정보 */
-.contactInfo, .contact form{
-    width: 45%;
-    padding:var(--size-1em);
-    border-radius: 15px;
-    border:none;
-    font-family: var(--font-en); 
-    letter-spacing: 5px;
+.contactBox{
+    /* background-size: 40vw 80vh; */
+    width: 20vw;
+    height: 80vh;
+    margin: 4vw;
+    box-sizing: border-box;
+    background: url(https://www.apple.com/v/iphone-13-pro/f/images/overview/camera/photographic-styles/customize_camera_hw__c53rc9zw7b42_medium_2x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    /* background-color: pink; */
+    border-radius: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactBox form{
+    width: 80%;
+    height: 70%;
+    padding: 1vw;
+    position: relative;
+    box-sizing: border-box;
+    /* background-color: yellow; */
+    text-align: left;
     display: flex;
     flex-direction: column;
-    font-size: var(--size-2em);
-    background-color: purple;
-}
-
-/* 2.이메일 보내기 */
-.contact form>input{
-    height: var(--size-3em);
-    border-radius: 10px;
-    margin-bottom:15px;
-    font-size: 0.5em;
-    border:2px dashed var(--color-green);
-    font-family: var(--font-en);
-}
-
-.sendBtn{
-    height: var(--size-4em);
-    border-radius: 5px;
-    margin-top:25px;
-    border:none;
-    background-color: var(--color-green);
-    font-family: var(--font-en);
-    font-size: var(--size-3em);
-    font-weight: 800;
-    letter-spacing: 5px;
 }
 
 
-/* 버튼 */
-#btn{
-    position: absolute;
-    top: 87%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding:8px 50px;
-    background-color: var(--color-white);
-    border-radius:var(--size-1em);
-    font-size: 1.4em;
-    color:var(--color-black);
-    z-index: 5000;
+.contactBox label{
+    /* color:red; */
+    padding:0.5vw;
+    /* background-color: green; */
+    font-weight: 700;
 }
 
+.contactBox input{
+    height: 4vh;
+    border: 0.5px solid var(--color-darkgrey);
+    margin-bottom: 1.5vh;
+}
 
+.contactBox input[type=button]{
+    margin-top: 3vh;
+    background-color: var(--color-black);
+    color:var(--color-white);
+    font-weight: 500;
+}
 
+.contactBox input[type=button]:hover{
+    cursor: pointer;
+}
 
-
+.contactBox i{
+    /* background-color: red; */
+    margin-right: 0.5vw;
+}
 /* -------------resume.html------------- */
 .career{
     height: auto;
@@ -1043,6 +1068,7 @@ footer{
 
 .copyRight{
     padding: 1vw; 
+    font-size: 1vw;
 }
 
 .icon img{
