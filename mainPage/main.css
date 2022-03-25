@@ -1,0 +1,408 @@
+/* -------------------- 메인 -------------------- */
+
+.section{
+	position: relative;
+    display: flex;
+	justify-content:center;
+	height:100vh;
+	overflow: hidden;
+    /* align-items: center; */
+	background-color:var(--color-white);
+}
+
+/* --------------------첫 화면-------------------- */
+.greetings{
+    background: url(/images/macbook.png) 20px fixed;
+	background-color:transparent;
+    background-repeat : no-repeat;
+    background-size: 98% 90%;
+    height: 100vh;
+    letter-spacing: 5px;
+    font-weight: 700;
+    /* font-size: 7vw; */
+    line-height: 1.3em;
+    text-align: center;
+    /* background-color: yellow; */
+} 
+
+
+.greetingText{
+    min-height: 25vh;
+    z-index:2000;
+    position: absolute;
+    background: fixed;
+    line-height: 1.5;
+    width: 10v2ß;
+    font-size: 3vw;
+    top:20%;
+    left: 20%;
+    z-index: 0;
+}
+
+/* --------------------인트로-------------------- */
+.intro{
+    background:var(--color-white) fixed;
+    align-items: center;
+    display:flex;
+}
+
+.intro >.introTextBox{
+    width: 70%;
+    height: 100%;
+    font-size: 5vw;
+    letter-spacing: -2px;
+    font-weight: 700;
+    line-height: 1.7em;
+    text-align: center;
+    /* background-color: pink; */
+}
+
+.introTextBox .red{
+    color:red;
+}
+
+.introTextBox >.siteName{
+    padding-top: 0.3em;
+    font-size: var(--size-2em);
+}
+
+
+/* 개발새발 글씨  */
+.one{
+	animation:textShow 3s;
+}
+
+.two{
+	animation:textShow 4s;
+}
+
+.three{
+	animation:textShow 5s;
+}
+
+.four{
+	animation:textShow 6s;
+}
+
+/* 개발세발 애니메이션 */
+@keyframes textShow{
+    from{
+        opacity: 0.3;
+        transform: translateY(-100px) scale(0.5);
+        color:rgb(202, 200, 200);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        color:var(--color-black);
+    }
+}
+
+
+/* ---------------개발자 동기--------------- */
+.introduce{
+    font-size: 8vw;
+    text-align: center;
+    line-height:1.5em;
+    letter-spacing: -5px;
+    font-weight: 800;
+	height:150vh;
+	overflow:hidden;
+    font-weight: 600;
+}
+
+
+
+/* 섹션2>배경비디오 안 본문내용 */
+.introduce ul{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top:20%;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.introduce ul>li:nth-child(2){
+	color:#f94945;
+    font-weight: 800;
+}
+
+.introduce ul>li:nth-child(2):hover{
+    transform: scale(1.5);  /* 빰빰 하고 2단계로 확장 필요*/
+    opacity: 1;
+  }
+/* 나는 어떤 사람인가? */
+
+.whoAmI button{
+    display: none;
+}
+
+.whoAmIWrapper h6{
+    /* background-color: yellow; */
+    font-size: 4vw;
+    color: var(--color-white);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.whoAmIWrapper .randomWord{
+    border-bottom: 5px solid var(--color-white);
+    padding: 5px;
+    /* background-color: red; */
+    min-width: 300px;
+}
+
+
+/* 포트폴리오 */
+.BoxWrapper{
+    width: 90%;
+    height: 90%;
+    background-color: red;
+}
+
+/*박스1*/
+.center1{
+    position: absolute;
+    top:50%;
+    left:20%;
+    transform: translate(-50%,-50%); /*이동*/
+}
+/* 2.75 x 32.5 x 22.7cm  */
+.box1{
+    position: relative;
+    width: 227px;
+    height: 159px;
+    transform: perspective(500px) rotate(-40deg) skew(25deg);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -90px 75px 20px rgba(0,0,0,.3); /*그림자*/
+    background: #fff  url(/images/macbooksilver.png);
+    background-size: cover;  
+    background-size: 227px 159px; /*키보드 사진 사이즈*/
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+    font-size: 20px; 
+    text-align: center;  
+    font-weight: bold; 
+    color:var(--color-white);
+	background-color:#93949a;
+    border-radius: 3px;       
+}
+
+.box1:hover{
+    transform: perspective(500px) rotate(-40deg) skew(25deg) translate(50px,-50px);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -150px 115px 100px rgba(0,0,0,0.3);
+}
+
+
+.box1::before{
+    content: '';
+    color:antiquewhite;
+    font-size: 25px;
+    width: 159px;
+    height: 19px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-40deg) translate(-89px,3px) rotate(90deg) ; /*Y축 기준 으로 40도 경사,X축 Y축 회전*/ 
+    background: #93949a ;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+}
+
+.box1::after{
+    content: ' ';
+    color:#dc5e73;
+    font-size: 20px;
+    width:225px;
+    height: 19px;
+    position: absolute;
+    top: 83px;
+    left: 28px;
+    transform: skewX(-52deg) translate(57px,74px);
+    background: #93949a;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 2px;
+}
+
+/*박스2*/
+.center2{
+    position: absolute;
+    top:50%;
+    left:40%;
+    transform: translate(-50%,-50%); /*이동*/
+}
+/* 2.75 x 32.5 x 22.7cm  */
+.box2{
+    position: relative;
+    width: 227px;
+    height: 159px;
+    transform: perspective(500px) rotate(-40deg) skew(25deg);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -90px 75px 20px rgba(0,0,0,.3); /*그림자*/
+    background: #fff  url(/images/macbooksilver.png);
+    background-size: cover;  
+    background-size: 227px 159px; /*키보드 사진 사이즈*/
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+    font-size: 20px; 
+    text-align: center;  
+    font-weight: bold; 
+    color:var(--color-white);
+	background-color:#93949a;
+    border-radius: 3px;       
+}
+
+.box2:hover{
+    transform: perspective(500px) rotate(-40deg) skew(25deg) translate(50px,-50px);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -150px 115px 100px rgba(0,0,0,0.3);
+}
+
+.box2::before{
+    content: '';
+    color:antiquewhite;
+    font-size: 25px;
+    width: 159px;
+    height: 19px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-40deg) translate(-89px,3px) rotate(90deg) ; /*Y축 기준 으로 40도 경사,X축 Y축 회전*/ 
+    background: #93949a ;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+}
+
+.box2::after{
+    content: ' ';
+    color:#dc5e73;
+    font-size: 20px;
+    width:225px;
+    height: 19px;
+    position: absolute;
+    top: 83px;
+    left: 28px;
+    transform: skewX(-52deg) translate(57px,74px);
+    background: #93949a;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 2px;
+}
+
+/*박스3*/
+.center3{
+    position: absolute;
+    top:50%;
+    left:60%;
+    transform: translate(-50%,-50%); /*이동*/
+}
+/* 2.75 x 32.5 x 22.7cm  */
+.box3{
+    position: relative;
+    width: 227px;
+    height: 159px;
+    transform: perspective(500px) rotate(-40deg) skew(25deg);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -90px 75px 20px rgba(0,0,0,.3); /*그림자*/
+    background: #fff  url(/images/macbooksilver.png);
+    background-size: cover;  
+    background-size: 227px 159px; /*키보드 사진 사이즈*/
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+    font-size: 20px; 
+    text-align: center;  
+    font-weight: bold; 
+    color:var(--color-white);
+	background-color:#93949a;
+    border-radius: 3px;       
+}
+
+.box3:hover{
+    transform: perspective(500px) rotate(-40deg) skew(25deg) translate(50px,-50px);/*원근감, 반시계방향으로 회전, x축 기준 25도 경사*/
+    box-shadow: -150px 115px 100px rgba(0,0,0,0.3);
+}
+
+.box3::before{
+    content: '';
+    color:antiquewhite;
+    font-size: 25px;
+    width: 159px;
+    height: 19px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-40deg) translate(-89px,3px) rotate(90deg) ; /*Y축 기준 으로 40도 경사,X축 Y축 회전*/ 
+    background: #93949a ;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+}
+
+.box3::after{
+    content: ' ';
+    color:#dc5e73;
+    font-size: 20px;
+    width:225px;
+    height: 19px;
+    position: absolute;
+    top: 83px;
+    left: 28px;
+    transform: skewX(-52deg) translate(57px,74px);
+    background: #93949a;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 2px;
+}
+
+
+/* 더 알아보기 */
+.learnMore{
+	height:100vh;
+}
+
+.learnMoreBack{
+	background:url(/images/user.jpg) fixed;
+    background-position: center;
+	background-size:cover;
+	width:100vw;
+	height:70%;
+	text-align:center;
+	align-items:center;
+}
+
+.learnMoreText{
+	font-size:3vw;
+	font-weight:500;
+    position: relative;
+	top:30%;
+	transform:translateY(-50%);
+	color:var(--color-white);
+	width:inherit;
+	position:absolute;
+	padding:1%;
+}
+
+.learnMoreText h2{
+	color:var(--color-white);
+	padding:1%;
+}
+
+.learnMoreText div{
+	padding:0.5%;
+}
+
+.learnMoreText a{
+	color:var(--color-white)!important;	
+}
+
+.learnMoreText a:hover{
+	text-decoration:underline;
+}

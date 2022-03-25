@@ -1,39 +1,31 @@
-//다크모드 버튼
-const toggle=document.querySelector('#toggle');
-const body=document.querySelector('body');
-const section=document.querySelectorAll('.section');
-const a=document.querySelectorAll('a');
-const spanList=document.querySelectorAll('span');
-const card=document.querySelectorAll('.card');
-const copyRight=document.querySelector('.copyRight');
-const headWrapper=document.querySelector('.header-wrapper');
+const span=document.querySelector('.randomWord');
+const button=document.querySelector('.hidenBtn');
+const bg=document.querySelector('.whoAmI');
+
+function randomPick(arr){
+  const random=Math.floor(Math.random()*arr.length);
+  return arr[random]
+}
+
+var wordArray=['활발한','성실한','호기심이 많은','열정적인','유쾌한','엉뚱한','몰입하는','조화로운','끈덕진','해야할 것을 아는','주체적인'];
 
 
-
-toggle.addEventListener('click',()=>{
-    toggle.classList.toggle('active'); //버튼컬러도 변경
-    body.classList.toggle('active'); //바디컬러도 변경
-    copyRight.classList.toggle('active');//카피라잇텍스트
-    headWrapper.classList.toggle('active');//네브바
-
-    //queryselectall 즉, 2개 이상 요소 선택 시에는 반복문 필수
-    //section 배경 변경
-    for(i=0;i<section.length;i++){
-        section[i].classList.toggle('active');
-    };
-
-    // span 변경
-    for(i=0;i<spanList.length;i++){
-        spanList[i].classList.toggle('active');
-    };
-
-    // card 변경
-    for(i=0;i<card.length;i++){
-        card[i].classList.toggle('active');
-    };
-
-    
+let time = 1000;
+    setInterval( 
+        function(){
+            if(time > 0){ 
+                time = time-1;
+                button.click();
+            }
+        },500
+    )
+button.addEventListener('click',function(){
+  span.innerText=randomPick(wordArray);
+bg.style.backgroundColor="#"+Math.round(Math.random()*0xffffff).toString(16);
 });
+
+
+
 
 
 
