@@ -1,218 +1,230 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>소중한,나의 페이지</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hi+Melody&family=Nanum+Pen+Script&family=Noto+Sans+SC:wght@100;400&family=Oswald:wght@300&family=Permanent+Marker&family=Quintessential&family=Rowdies:wght@300;400&family=Sedgwick+Ave&family=Shadows+Into+Light&family=Staatliches&family=Stylish&family=Sunflower:wght@300&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-	<script src="https://kit.fontawesome.com/1b2b5a6b02.js" crossorigin="anonymous"></script>    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hi+Melody&family=Nanum+Pen+Script&family=Noto+Sans+SC:wght@100;400&family=Oswald:wght@300&family=Permanent+Marker&family=Quintessential&family=Rowdies:wght@300;400&family=Sedgwick+Ave&family=Shadows+Into+Light&family=Staatliches&family=Stylish&family=Sunflower:wght@300&family=ZCOOL+QingKe+HuangYou&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/1b2b5a6b02.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/resumePage/resume.css">
-    
-</head>
-<body>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/common.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/resumePage/resume.css" />
+  </head>
+  <body>
     <!-- 헤더 -->
     <header>
-        <div class="header-wrapper">
-            <div class="mainlogo">
-                <a href="/mainPage/main.html"><img src="/images/start-up.png" alt=""></a>    
-                <a href="/mainPage/main.html">개발,"새"발</a>          
-            </div>
-
-            <!-- 네이게이션바 -->
-            <nav class="navBar">
-                <ul id="navBarList">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="/resumePage/resume.html">RESUME</a></li>
-                </ul>
-                <div class="DarkMode">
-                    <div id="toggle">
-                        <i class="indicator"></i>
-                    </div>
-                </div>
-            </nav>
+      <div class="header-wrapper">
+        <div class="mainlogo">
+          <a href="/mainPage/main.html"
+            ><img src="/images/start-up.png" alt=""
+          /></a>
+          <a href="/mainPage/main.html">개발,"새"발</a>
         </div>
+
+        <!-- 네이게이션바 -->
+        <nav class="navBar">
+          <ul id="navBarList">
+            <li><a href="/mainPage/main.html">HOME</a></li>
+            <li>
+              <a
+                href="https://ahead-laser-4ca.notion.site/4cc38628ddbf495fbb27f9c6f3baa3af"
+                >PORTFOLIO</a
+              >
+            </li>
+            <li><a href="/resumePage/resume.html">RESUME</a></li>
+            <li><a href="/contactPage/contact.html">CONTACT</a></li>
+          </ul>
+          <div class="DarkMode">
+            <div id="toggle">
+              <i class="indicator"></i>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <!-- 메인 -->
     <main>
-            <!-- 이전 이력 -->
-            <div class="section career">
-                <div class="timeline-wrapper">
-                    <h1>이 모든 경험들은,</h1>
-					<h1>바로 개발자가 되기 위한</h1>
-                    <div class="practice">
-                        <span class="practice1">•</span>
-                        <span class="practice2">•</span>
-                        <span class="practice3">•</span>
-                        <span class="practice4">•</span>
-                        <br>
-                        <span class="practice1">준</span>
-                        <span class="practice2">비</span>    
-                        <span class="practice3">운</span>    
-                        <span class="practice4">동</span>    
-                    </div>
-                    <ul class="timeline">
-                        <li class="timeline-item">
-                            <div class="workExperience">
-                                <div class="workExperience-contents">
-                                    <h2>
-                                        <strong>2015</strong>
-										온라인 셀러
-										<span class="comNposition">대표</span>
-                                    </h2>
-                                    <ul class="firstExperience">
-                                        <li>대학생때부터 쭈욱-</li>
-                                        <li>무언가를 판매하고싶어서,</li>
-                                        <li>온라인 상점을 열어,</li>
-                                        <li>옷과 액세서리 등의 잡화를 판매해봤고,</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-item">
-                            <div class="workExperience">
-                                <div class="workExperience-contents">
-                                    <h2>
-                                        <strong>2018</strong>
-                                        고객경험팀
-                                        <span class="comNposition">팀캡틴 / 아고다</span>
-                                    </h2>
-                                    <ul class="secondExperience">
-                                        <li>글로벌 여행 플랫폼에서</li>
-                                        <li>고객의 여행 경험을 책임지는</li>
-                                        <li>고객경험팀의 캡틴으로써</li>
-                                        <li>최고의 경험 제공을 위한 방법도 고민했었죠.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-item">
-                            <div class="workExperience">
-                                <div class="workExperience-contents">
-                                    <h2>
-                                        <strong>2019</strong>
-                                        MCM글로벌고객지원팀
-                                        <span class="comNposition">팀장 / 트랜스코스모스코리아</span>
-                                    </h2>
-                                    <ul class="thirdExperience">
-                                        <li>전 세계에서 핫한 MCM 브랜드의</li>
-                                        <li>글로벌 고객센터를 총괄하는 팀장으로써</li>
-                                        <li>해외 고객들에게 훌륭한 구매 경험을 선사하기 위해</li>
-                                        <li>경험 분석 및 인사이트를 제공하기도 했고요,</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-item">
-                            <div class="workExperience">
-                                <div class="workExperience-contents">
-                                    <h2>
-                                        <strong>2020</strong>
-                                        퍼스널쇼퍼팀
-                                        <span class="comNposition">매니저 / 발란</span>
-                                    </h2>
-                                    <ul class="fourthExperience">
-                                        <li>떠오르는 온라인 럭셔리 플랫폼에서</li>
-                                        <li>끊임없이 개발팀과 소통하며</li>
-                                        <li>고객의 목소리를 제품에 잘- 녹여내어</li>
-                                        <li>고객 경험을 개선했죠.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-					
+      <!-- 이전 이력 -->
+      <div class="section career">
+        <div class="timeline-wrapper">
+          <h1>이 모든 경험들은,<br />바로 개발자가 되기 위한</h1>
+
+          <div class="practice">
+            <span class="practice1">•</span>
+            <span class="practice2">•</span>
+            <span class="practice3">•</span>
+            <span class="practice4">•</span>
+            <br />
+            <span class="practice1">준</span>
+            <span class="practice2">비</span>
+            <span class="practice3">운</span>
+            <span class="practice4">동</span>
+          </div>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="workExperience">
+                <div class="workExperience-contents">
+                  <h2>
+                    <strong>2015</strong>
+                    온라인 셀러
+                    <span class="comNposition">대표</span>
+                  </h2>
+                  <ul class="firstExperience show">
+                    <li>대학생때부터 쭈욱-</li>
+                    <li>무언가를 판매하고싶어서,</li>
+                    <li>온라인 상점을 열어,</li>
+                    <li>옷과 액세서리 등의 잡화를 판매해봤고,</li>
+                  </ul>
                 </div>
-        </div>
-        <div class="section now">
-            그 다음은. . .
-            <div class="heartWrapper">
-                <img src="/images/heart.png" alt="">
-            </div>
-        </div>
-
-        <div class="section nowWrapper">
-            <div class="wrapper1"></div>
-            <div class="wrapper2">
-                <iframe src="https://giphy.com/embed/Dk57URqjqjHjNGHeMV" width="100%" height="100%"  frameBorder="0" class="giphy-embed" allowFullScreen></iframe>        
-            </div>
-        </div>
-
-        <div class='section letsGo'>
-            <span>자,이제</span>
-            <span>제가 만든</span>
-            <span>나름 작고 큰 작품들을</span>
-            <span>감상하러 가보실까요?</span>
-            <div class="carouselWrapper">
-                <div class="carousel1 owl-carousel">
-                    <div class="card card1">
-                        p1
-                    </div>
-                    <div class="card card2">
-                        p1
-                    </div>
-                    <div class="card card3">
-                        p1
-                    </div>
-                    <div class="card card4">
-                        p1
-                    </div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="workExperience">
+                <div class="workExperience-contents">
+                  <h2>
+                    <strong>2018</strong>
+                    고객경험팀
+                    <span class="comNposition">팀캡틴 / 아고다</span>
+                  </h2>
+                  <ul class="secondExperience show">
+                    <li>글로벌 여행 플랫폼에서</li>
+                    <li>고객의 여행 경험을 책임지는</li>
+                    <li>고객경험팀의 캡틴으로써</li>
+                    <li>최고의 경험 제공을 위한 방법도 고민했었죠.</li>
+                  </ul>
                 </div>
-            </div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="workExperience">
+                <div class="workExperience-contents">
+                  <h2>
+                    <strong>2019</strong>
+                    MCM글로벌고객지원팀
+                    <span class="comNposition"
+                      >팀장 / 트랜스코스모스코리아</span
+                    >
+                  </h2>
+                  <ul class="thirdExperience show">
+                    <li>전 세계에서 핫한 MCM 브랜드의</li>
+                    <li>글로벌 고객센터를 총괄하는 팀장으로써</li>
+                    <li>해외 고객들에게 훌륭한 구매 경험을 선사하기 위해</li>
+                    <li>경험 분석 및 인사이트를 제공하기도 했고요,</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="workExperience">
+                <div class="workExperience-contents">
+                  <h2>
+                    <strong>2020</strong>
+                    퍼스널쇼퍼팀
+                    <span class="comNposition">매니저 / 발란</span>
+                  </h2>
+                  <ul class="fourthExperience show">
+                    <li>떠오르는 온라인 럭셔리 플랫폼에서</li>
+                    <li>끊임없이 개발팀과 소통하며</li>
+                    <li>고객의 목소리를 제품에 잘- 녹여내어</li>
+                    <li>고객 경험을 개선했죠.</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-</main>
+      </div>
+      <div class="section now">
+        그 다음은. . .
+        <div class="heartWrapper">
+          <img src="/images/heart.png" alt="" />
+        </div>
+      </div>
 
-<!-- 하단 -->
-<footer>
-    <div class="footer">
+      <div class="section nowWrapper">
+        <div class="wrapper1"></div>
+        <div class="wrapper2">
+          <iframe
+            src="https://giphy.com/embed/Dk57URqjqjHjNGHeMV"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            class="giphy-embed"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </main>
+
+    <!-- 하단 -->
+    <footer>
+      <div class="footer">
         <div class="copyRight">copyright&copy;young</div>
         <div class="icon">
-            <a href="">
-                <img src="/images/github-sign.png" alt="">
-            </a>
-            <a href="">
-                <img src="/images/Notion_app_logo.png" alt="">
-            </a>
-            <a href="/contactPage/contact.html"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img src="/images/email.png" alt="">
-            </a>
+          <a href="">
+            <img src="/images/github-sign.png" alt="" />
+          </a>
+          <a href="">
+            <img src="/images/Notion_app_logo.png" alt="" />
+          </a>
+          <a
+            href="/contactPage/contact.html"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <img src="/images/email.png" alt="" />
+          </a>
         </div>
-    </div>
-</footer>
- <script>
-     $(".carousel1").owlCarousel({
-        margin:10,
-        loop:true,
-        autoplay:true,
-        autoplayTimeout:2000,
-        autoplayHoverPause:true,
-        responsive:{
-            0:{
-                items:1,
-                nav:false
-            },
-            600:{
-                items:2,
-                nav:false
-            },
-            1000:{
-                items:3,
-                nav:false
-            }
+      </div>
+    </footer>
+    <script>
+      //스크롤에 따른 텍스트 효과 적용
+
+      ScrollReveal({ reset: true });
+      ScrollReveal().reveal(".show", { delay: 500 });
+
+      ScrollReveal().reveal(".letsGo1", { delay: 400 });
+      ScrollReveal().reveal(".letsGo2", { delay: 800 });
+
+      ScrollReveal().reveal(".letsGo3", { delay: 1200 });
+
+      ScrollReveal().reveal(".letsGo4", { delay: 1600 });
+
+      //타이핑 효과
+      const typingcontent = "개 발 자.";
+      const typingtext = document.querySelector(".wrapper1");
+      let k = 0;
+
+      function typing() {
+        let txt = typingcontent[k++];
+        typingtext.innerHTML += txt;
+        if (k > typingcontent.length) {
+          typingtext.textContent = "";
+          k = 0;
         }
-     });
- </script>
-    <script src="/common.js"></script>
-    <script src="/resumePage/resume.js"></script>
-</body>
+      }
+      setInterval(typing, 500);
+    </script>
+  </body>
 </html>
