@@ -25,7 +25,7 @@ window.onload = function () {
   const headWrapper = document.querySelector(".header-wrapper");
   const li = document.querySelectorAll("li");
   const h1 = document.querySelectorAll("h1");
-  const sendMail = document.querySelector("#sendMail");
+  // const sendMail = document.querySelector("#sendMail");
   const footer = document.querySelector("footer");
 
   toggle.addEventListener("click", () => {
@@ -33,7 +33,7 @@ window.onload = function () {
     body.classList.toggle("active"); //바디컬러도 변경
     copyRight.classList.toggle("active"); //카피라잇텍스트
     headWrapper.classList.toggle("active"); //네브바
-    sendMail.classList.toggle("active");
+    // sendMail.classList.toggle("active");
     footer.classList.toggle("active");
 
     //queryselectall 즉, 2개 이상 요소 선택 시에는 반복문 필수

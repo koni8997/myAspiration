@@ -14,6 +14,12 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
   <link rel="stylesheet" href="/contactPage/contact.css">
   <link rel="stylesheet" href="/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+/>
   <script type="text/javascript">
     /*! modernizr 3.6.0 (Custom Build) | MIT *
      * https://modernizr.com/download/?-cssanimations-csspositionsticky-csstransforms-csstransitions-setclasses !*/
@@ -88,30 +94,36 @@
 
   <script src="/common.js" defer></script>
   <script>
-      $(document).ready(function () {
-  emailjs.init("-KHcnBM89mDRh9Knu");
-  $("input[name=submit]").click(function () {
-    var templateParams = {
-      name: $("input[name=name]").val(),
-      phone: $("input[name=phone]").val(),
-      email: $("input[name=email]").val(),
-      message: $("textarea[name=message]").val(),
-    };
+    const toggle = document.querySelector("#toggle");
+    const sendMail = document.querySelector("#sendMail");
+    toggle.addEventListener("click", () => {
+        sendMail.classList.toggle("active")}); 
 
-    emailjs
-      .send("service_8v8ti9c", "template_z7811nf", templateParams)
-      //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
-      .then(
+    // emailjs
+      $(document).ready(function () {
+        emailjs.init("-KHcnBM89mDRh9Knu");
+        $("input[name=submit]").click(function () {
+            var templateParams = {
+            name: $("input[name=name]").val(),
+            phone: $("input[name=phone]").val(),
+            email: $("input[name=email]").val(),
+            message: $("textarea[name=message]").val(),
+            };
+
+        emailjs
+        .send("service_8v8ti9c", "template_z7811nf", templateParams)
+        //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
+        .then(
         function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-          alert("전송 완료! 빠른 시일 내 연락 드리겠습니다.");
+            console.log("SUCCESS!", response.status, response.text);
+            alert("전송 완료! 빠른 시일 내 연락 드리겠습니다.");
         },
         function (error) {
-          console.log("FAILED...", error);
+            console.log("FAILED...", error);
         }
-      );
-  });
-});
+        );
+        });
+        });
   </script>
   
 </html>

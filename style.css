@@ -67,6 +67,7 @@ a.active {
 
 .section.active {
   background-color: var(--color-black);
+  color: white;
 }
 
 .copyRight.active {
@@ -613,17 +614,52 @@ footer {
 @media screen and (max-width: 576px) {
   .greetingText {
     font-size: 30px;
+    min-width: 400px;
+    margin-left: 5%;
   }
 
   .greetings {
     background-size: 100% 50%;
   }
 
+  .mainlogo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mainlogo {
+    font-size: 5vw;
+  }
+  .mainlogo img {
+    width: 30px;
+  }
+
+  .carousel1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .carousel1 .card {
+    width: 100%;
+    min-height: 58vh;
+  }
+
+  .carouselWrapper {
+    width: 90%;
+  }
+
+  /* resume.html */
   .timeline-item:before {
     display: none;
   }
   .timeline .timeline-item {
     width: 100%;
+    min-height: 800px;
+  }
+
+  .timeline-item .show {
+    font-size: 25px;
   }
   .timeline:before {
     display: none;
@@ -632,6 +668,7 @@ footer {
   .workExperience-contents ul {
     font-size: 50px;
   }
+
   .timeline-item:after {
     left: 0;
     height: 2px;
@@ -640,5 +677,29 @@ footer {
 
   .workExperience-contents {
     padding: 0;
+  }
+
+  .footer {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .footer > div {
+    font-size: 20px;
+  }
+
+  .footer .icon img {
+    width: 5vw;
+  }
+
+  .btnWrapper {
+    flex-direction: column;
+  }
+
+  .card .btnWrapper a {
+    width: 100%;
+    margin: 2px;
   }
 }
