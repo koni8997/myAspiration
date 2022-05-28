@@ -66,6 +66,43 @@ window.onload = function () {
       a[i].classList.toggle("active");
     }
   });
+
+  const span=document.querySelector('.randomWord');
+const button=document.querySelector('.hidenBtn');
+const bg=document.querySelector('.randomWord');
+
+function randomPick(arr){
+  const random=Math.floor(Math.random()*arr.length);
+  return arr[random]
+}
+
+var wordArray=['활발한','성실한','호기심이 많은','열정적인','유쾌한','엉뚱한','몰입하는','조화로운','끈덕진','해야할 것을 아는','주체적인'];
+
+
+let time = 1000;
+    setInterval( 
+        function(){
+            if(time > 0){ 
+                time = time-1;
+                button.click();
+            }
+        },500
+    )
+button.addEventListener('click',function(){
+  span.innerText=randomPick(wordArray);
+bg.style.color="#"+Math.round(Math.random()*0xffffff).toString(16);
+});
+
+
+// 스크롤 위치에 따른 텍스트 효과
+ScrollReveal({ reset: true });
+ScrollReveal().reveal(".show", { delay: 500 });
+ScrollReveal().reveal(".letsGo1", { delay: 350 });
+ScrollReveal().reveal(".letsGo2", { delay: 700 });
+ScrollReveal().reveal(".letsGo3", { delay: 1050 });
+ScrollReveal().reveal(".letsGo4", { delay: 1400 });
+
+
 };
 
 // 캐러셀/

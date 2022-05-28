@@ -328,10 +328,12 @@ footer {
 }
 
 .greetingText {
+  min-width: 100%;
   min-height: 25vh;
   line-height: 1.5;
   font-size: 50px;
   z-index: 0;
+  margin-left: 5%;
 }
 
 /* --------------------인트로-------------------- */
@@ -451,7 +453,6 @@ footer {
 
 .whoAmIWrapper h6 {
   font-size: 4vw;
-  color: var(--color-white);
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -615,7 +616,6 @@ footer {
   .greetingText {
     font-size: 30px;
     min-width: 400px;
-    margin-left: 5%;
   }
 
   .greetings {
@@ -623,14 +623,11 @@ footer {
   }
 
   .mainlogo {
-    display: none;
+    font-size: 5vw;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .mainlogo {
-    font-size: 5vw;
-  }
   .mainlogo img {
     width: 30px;
   }
