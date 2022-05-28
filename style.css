@@ -251,7 +251,7 @@ footer {
 }
 
 .contactBox {
-  background-image: url(/images/iphoneFrame.png);
+  background-image: url(./images/iphoneFrame.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 300px;
@@ -311,7 +311,7 @@ footer {
 
 /* --------------------첫 화면-------------------- */
 .greetings {
-  background: url(/images/macbook.png) 20px fixed;
+  background: url(./images/macbook.png) 20px fixed;
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: 98% 90%;
@@ -480,7 +480,7 @@ footer {
 }
 
 .learnMoreBack {
-  background: url(/images/user.jpg) fixed;
+  background: url(./images/user.jpg) fixed;
   background-position: center;
   background-size: cover;
   width: 100vw;
